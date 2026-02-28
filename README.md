@@ -17,4 +17,4 @@ Whether we are building sleek web interfaces, experimenting with Python logic, o
 3. Copy the code directly, or clone the entire repository to your local machine using your terminal:
    
    ```bash
-   git clone [https://github.com/ritesh-0309/SyntaxSweat.git](https://github.com/ritesh-0309/SyntaxSweat.git)
+   git clone https://github.com/ritesh-0309/SyntaxSweat.git
