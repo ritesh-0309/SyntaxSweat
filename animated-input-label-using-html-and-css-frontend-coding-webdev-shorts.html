@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Input Label using HTML and CSS #frontend #coding #webdev #shorts</title>
+    <style>
+body
+{
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0d0d2b, #1a1a40);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-container
+{
+  position: relative;
+  width: 320px;
+}
+
+.input-container input
+{
+  width: 100%;
+  padding: 16px 12px;
+  border: 2px solid #00ffff;
+  border-radius: 12px;
+  background: transparent;
+  color: #00ffff;
+  font-size: 1.2rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  animation: pulse 3s infinite;
+}
+
+.input-container input:focus
+{
+  border-color: #ff00ff;
+  box-shadow: 0 0 12px #ff00ff;
+}
+
+.input-container label
+{
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  color: #00ffff;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  background: rgba(13,13,43,0.8);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label
+{
+  top: -10px;
+  left: 12px;
+  font-size: 0.9rem;
+  color: #ff00ff;
+  background: #0d0d2b;
+}
+
+.input-container:hover input
+{
+  transform: scale(1.02);
+  box-shadow: 0 0 16px #00ffff;
+}
+
+@keyframes pulse
+{
+  0%
+  {
+    box-shadow: 0 0 8px #00ffff;
+  }
+  50%
+  {
+    box-shadow: 0 0 16px #00ffff;
+  }
+  100%
+  {
+    box-shadow: 0 0 8px #00ffff;
+  }
+}
+
+    </style>
+</head>
+<body>
+<div class="input-container">
+  <input type="text" id="animated-input" required />
+  <label for="animated-input">Enter Text</label>
+</div>
+</body>
+</html>
