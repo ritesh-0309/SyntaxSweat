@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Animated Input Label using HTML and CSS #webdevelopment #htmlcss #coding #shorts</title>
+    <style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0a2a, #001f3f);
+}
+
+.input-container {
+  position: relative;
+  width: 320px;
+  animation: pulse 3s infinite;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 16px 12px;
+  font-size: 1.2rem;
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0,255,255,0.3);
+  transition: all 0.4s ease;
+}
+
+.input-container label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #aaa;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+
+.input-container input:focus {
+  box-shadow: 0 0 20px rgba(0,255,255,0.6);
+}
+
+.input-container input:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255,0,255,0.5);
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label,
+.input-container input:valid + label {
+  top: 0;
+  transform: translateY(-50%) scale(0.8);
+  color: #00ffff;
+  background: #0a0a2a;
+  padding: 0 4px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+    </style>
+</head>
+<body>
+<div class="input-container">
+  <input type="text" id="name" required>
+  <label for="name">Your Name</label>
+</div>
+</body>
+</html>
