@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Support Button using HTML and CSS #webdevelopment #htmlcss #coding #shorts</title>
+    <style>
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a0a2a, #000000);
+  overflow: hidden;
+}
+
+.support-btn {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #00ffff;
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,255,255,0.6), 0 0 30px rgba(255,0,255,0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.support-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(0,255,255,0.6), 0 0 30px rgba(255,0,255,0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0,255,255,0.8), 0 0 45px rgba(255,0,255,0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(0,255,255,0.6), 0 0 30px rgba(255,0,255,0.4);
+  }
+}
+
+.support-btn {
+  animation: pulse 2.5s infinite;
+}
+
+.support-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  box-shadow: 0 0 25px rgba(0,255,255,0.9), 0 0 45px rgba(255,0,255,0.7);
+}
+
+    </style>
+</head>
+<body>
+<button class="support-btn">Support</button>
+</body>
+</html>
