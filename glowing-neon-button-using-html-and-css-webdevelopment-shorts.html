@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Neon Button using HTML and CSS #webdevelopment #shorts</title>
+    <style>
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #0a0a2a, #001133);
+}
+
+.neon-button
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00ffff;
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  border: none;
+  border-radius: 16px;
+  padding: 1.2rem 2.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  animation: pulse 2s infinite;
+}
+
+.neon-button:hover
+{
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+}
+
+@keyframes pulse
+{
+  0%
+  {
+    box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #ff00ff, 0 0 20px #ff00ff;
+  }
+  50%
+  {
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 45px #ff00ff, 0 0 60px #ff00ff;
+  }
+  100%
+  {
+    box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #ff00ff, 0 0 20px #ff00ff;
+  }
+}
+    </style>
+</head>
+<body>
+  <button class="neon-button">Glowing Neon Button</button>
+</body>
+</html>
