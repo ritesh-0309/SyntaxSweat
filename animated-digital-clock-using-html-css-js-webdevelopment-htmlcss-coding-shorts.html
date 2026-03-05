@@ -5,91 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animated Digital Clock using HTML CSS JS #webdevelopment #htmlcss #coding #shorts</title>
     <style>
-body
-{
+body {
   margin: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #0a0a2a, #001133);
-  overflow: hidden;
 }
-.clock
-{
-  position: relative;
-  background: rgba(0, 255, 255, 0.1);
+
+.clock {
+  background: rgba(0, 0, 0, 0.6);
   padding: 30px 40px;
   border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0,255,255,0.6);
-  transition: transform 0.4s ease;
-  transition: box-shadow 0.4s ease;
+  box-shadow: 0 0 20px rgba(0,255,255,0.5), inset 0 0 10px rgba(0,255,255,0.3);
+  display: flex;
+  gap: 8px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: pulse 4s infinite ease-in-out;
 }
-.clock:hover
-{
+
+.clock:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(0,255,255,0.9);
+  box-shadow: 0 0 30px rgba(255,0,255,0.7), inset 0 0 15px rgba(255,0,255,0.4);
 }
-.time
-{
+
+.digit {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 4rem;
   font-weight: bold;
+  font-size: 6rem;
   color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-  letter-spacing: 4px;
+  text-shadow: 0 0 8px #00ffff, 0 0 20px #00ffff;
 }
-.colon
-{
-  animation: blink 1s steps(1) infinite;
+
+.colon {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 6rem;
+  color: #ff00ff;
+  text-shadow: 0 0 8px #ff00ff, 0 0 20px #ff00ff;
+  animation: blink 1s steps(2, start) infinite;
 }
-@keyframes blink
-{
-  0%
-  {
-    opacity: 1;
-  }
-  50%
-  {
-    opacity: 0;
-  }
-  100%
-  {
-    opacity: 1;
-  }
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
-.clock::after
-{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  box-shadow: inset 0 0 30px rgba(255,0,255,0.3);
-  pointer-events: none;
-  animation: pulse 3s infinite;
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
 }
-@keyframes pulse
-{
-  0%
-  {
-    box-shadow: inset 0 0 20px rgba(255,0,255,0.2);
-  }
-  50%
-  {
-    box-shadow: inset 0 0 30px rgba(255,0,255,0.5);
-  }
-  100%
-  {
-    box-shadow: inset 0 0 20px rgba(255,0,255,0.2);
-  }
-}
+
     </style>
 </head>
 <body>
 <div class="clock">
-  <div class="time">
-    12<span class="colon">:</span>34<span class="colon">:</span>56
-  </div>
+  <span class="digit">12</span>
+  <span class="colon">:</span>
+  <span class="digit">34</span>
+  <span class="colon">:</span>
+  <span class="digit">56</span>
 </div>
 </body>
 </html>
