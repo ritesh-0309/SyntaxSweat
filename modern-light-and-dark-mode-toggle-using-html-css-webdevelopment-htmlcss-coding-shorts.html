@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Light and Dark Mode Toggle using HTML CSS #webdevelopment #htmlcss #coding #shorts</title>
+    <style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #00f5ff, #ff00ff);
+  transition: background 0.5s ease;
+}
+
+.wrapper:has(#theme-toggle:checked) {
+  background: linear-gradient(135deg, #111111, #000000);
+}
+
+#theme-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toggle {
+  width: 120px;
+  height: 60px;
+  background: #222222;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,255,255,0.5);
+  transition: background 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,255,255,0.8);
+}
+
+.toggle-inner {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 50px;
+  height: 50px;
+  background: #00ffff;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+  transition: background 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 8px #00ffff;
+}
+
+#theme-toggle:checked + .toggle .toggle-inner {
+  left: 65px;
+  background: #ff00ff;
+  box-shadow: 0 0 8px #ff00ff;
+}
+
+.toggle-inner::before {
+  content: "☀️";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+#theme-toggle:checked + .toggle .toggle-inner::before {
+  content: "🌙";
+}
+
+.wrapper:has(#theme-toggle:checked) .toggle {
+  background: #333333;
+  box-shadow: 0 0 10px rgba(255,0,255,0.5);
+}
+
+.wrapper:has(#theme-toggle:checked) .toggle:hover {
+  box-shadow: 0 0 20px rgba(255,0,255,0.8);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(0,255,255,0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0,255,255,0.9);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0,255,255,0.5);
+  }
+}
+    </style>
+</head>
+<body>
+<div class="wrapper">
+  <input type="checkbox" id="theme-toggle" />
+  <label for="theme-toggle" class="toggle">
+    <div class="toggle-inner"></div>
+  </label>
+</div>
+</body>
+</html>
