@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Download Button Using Pure HTML & CSS #webdevelopment #htmlcss #coding #shorts</title>
+    <style>
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #0a0a2a, #001133);
+  overflow: hidden;
+}
+
+.download-btn
+{
+  position: relative;
+  padding: 20px 40px;
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,255,255,0.7), 0 0 20px rgba(255,0,255,0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  animation: pulse 3s infinite;
+}
+
+.download-btn::after
+{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: transform 0.6s ease;
+}
+
+.download-btn:hover
+{
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0,255,255,0.9), 0 0 30px rgba(255,0,255,0.9);
+}
+
+.download-btn:active::after
+{
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.2s ease;
+}
+
+@keyframes pulse
+{
+  0%
+  {
+    box-shadow: 0 0 10px rgba(0,255,255,0.5), 0 0 20px rgba(255,0,255,0.5);
+  }
+  50%
+  {
+    box-shadow: 0 0 20px rgba(0,255,255,0.8), 0 0 30px rgba(255,0,255,0.8);
+  }
+  100%
+  {
+    box-shadow: 0 0 10px rgba(0,255,255,0.5), 0 0 20px rgba(255,0,255,0.5);
+  }
+}
+    </style>
+</head>
+<body>
+<button class="download-btn">Download</button>
+</body>
+</html>
