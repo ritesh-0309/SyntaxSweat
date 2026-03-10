@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Digital Clock using HTML CSS JS #webdevelopment #htmlcss #coding #shorts</title>
+    <style>
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0d0d2b, #000);
+  overflow: hidden;
+}
+
+.clock {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #00ffff;
+  background: rgba(0,0,0,0.6);
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #00ffff,
+              0 0 40px #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+  transition: transform 0.4s ease,
+              box-shadow 0.4s ease;
+  animation: pulse 3s infinite;
+}
+
+.clock:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px #ff00ff,
+              0 0 60px #ff00ff;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px #00ffff,
+                0 0 40px #00ffff;
+  }
+  50% {
+    box-shadow: 0 0 30px #00ffff,
+                0 0 60px #00ffff;
+  }
+  100% {
+    box-shadow: 0 0 20px #00ffff,
+                0 0 40px #00ffff;
+  }
+}
+
+    </style>
+</head>
+<body>
+<div class="clock">12:34:56</div>
+</body>
+</html>
