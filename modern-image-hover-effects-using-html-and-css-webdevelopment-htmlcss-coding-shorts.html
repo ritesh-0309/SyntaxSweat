@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Image Hover Effects using HTML and CSS #webdevelopment #htmlcss #coding #shorts</title>
+    <style>
+body
+{
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0a2a, #001133);
+  overflow: hidden;
+}
+.image-card
+{
+  position: relative;
+  width: 320px;
+  height: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: pulse 3s infinite;
+}
+.image-card::before
+{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+  background-size: 300% 300%;
+  animation: gradientShift 6s infinite;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+.image
+{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #222, #555);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+.overlay
+{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  background: rgba(0,0,0,0.4);
+  transition: opacity 0.4s ease;
+}
+.overlay h2
+{
+  margin: 0;
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-shadow: 0 0 8px #00ffff;
+}
+.overlay p
+{
+  margin-top: 8px;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.image-card:hover
+{
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,255,255,0.8);
+}
+.image-card:hover .image
+{
+  transform: scale(1.1);
+}
+.image-card:hover .overlay
+{
+  opacity: 1;
+}
+@keyframes gradientShift
+{
+  0%
+  {
+    background-position: 0% 50%;
+  }
+  50%
+  {
+    background-position: 100% 50%;
+  }
+  100%
+  {
+    background-position: 0% 50%;
+  }
+}
+@keyframes pulse
+{
+  0%
+  {
+    transform: translateY(0) scale(1);
+  }
+  50%
+  {
+    transform: translateY(-5px) scale(1.02);
+  }
+  100%
+  {
+    transform: translateY(0) scale(1);
+  }
+}
+    </style>
+</head>
+<body>
+<div class="image-card">
+  <div class="image"></div>
+  <div class="overlay">
+    <h2>Hover Effect</h2>
+    <p>Cool CSS animation</p>
+  </div>
+</div>
+</body>
+</html>
